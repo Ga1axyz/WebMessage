@@ -1,0 +1,215 @@
+/*
+ * @Descripttion: 登录注册界面 CSS
+ * @version: 1.0
+ * @Author: Ga1axy_z
+ * @Date: 2021-05-20 10:24:02
+ * @LastEditors: Ga1axy_z
+ * @LastEditTime: 2021-05-20 18:18:32
+ */
+
+ /* 登录界面 */
+.login_box {
+    width: 520px;
+    height: 365px;
+    overflow: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: #a1a1a1 0 2px 10px;
+}
+.loginTitle {
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 520;
+    font-family:'Jellyka_-_Love_and_Passion';
+    height: 140px;
+    padding: 35px;
+    margin-bottom: 30px;
+    background-color: #99ccffcc;
+}
+.loginPart1,.loginPart2 {
+    display: flex;
+    justify-content: center;/*项目在主轴上的对齐方式*/
+    align-items: center;/*项目在交叉轴上的对齐方式*/
+    font-size: 2em;
+    margin: 20px 66px;
+}
+.login_box input {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+    font-size: 0.48em;
+    BORDER-RIGHT: #9a9999 0px solid;
+    BORDER-TOP:#9a9999 0px solid;
+    BORDER-LEFT: #9a9999 0px solid;
+    BORDER-BOTTOM: #9a9999 1px solid;
+}
+#username:focus, #password:focus, #register_username:focus, #register_password:focus {
+    border-color: #2f99ff;
+}
+/* placeholder选择器 Chrome/Opera/Safari */
+input[id='username']::-webkit-input-placeholder {
+    font-size: 1.2em;
+}
+input[id='password']::-webkit-input-placeholder {
+    font-size: 1.2em;
+}
+/* placeholder选择器 Firefox 19+ */
+input[id='username']::-moz-placeholder {
+    font-size: 1.2em;
+}
+input[id='password']::-moz-placeholder {
+    font-size: 1.2em;
+}
+.loginButton {
+    display: flex;
+    justify-content: center;/*项目在主轴上的对齐方式*/
+    align-items: center;/*项目在交叉轴上的对齐方式*/
+}
+#loginBtn {
+    width: 250px;
+    height: 45px;
+    font-size: 1.5em;
+    color: #ffffff;
+    background-color: #66afe9;
+    border: none;
+    border-radius: 5px;
+}
+#registerBtn {
+    width: 66px;
+    height: 45px;
+    font-size: 1.5em;
+    color: #ffffff;
+    background-color: #66666688;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+#loginBtn:hover {
+    background-color: #77CCFF;
+    transition: 0.25s;
+}
+#registerBtn:hover {
+    background-color: #66666666;
+    transition: 0.25s;
+}
+
+/* 注册界面 */
+.register_box {
+    width: 660px;
+    height: 475px;
+    overflow: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: #a1a1a1 0 2px 10px;
+}
+.registerTitle {
+    text-align: center;
+    font-size: 2em;
+    height: 66px;
+    padding: 10px;
+    background-color: #CCCCFF;
+}
+.registerPart1, .registerPart2, .registerPart3, .registerPart4, .registerBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2em;
+}
+.registerLeft {
+    width: 300px;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.registerPart4 {
+    width: 340px;
+    margin-top: 2px;
+    margin-left: 16px;
+}
+.part4title {
+    margin-right: 10px;
+    color: #666666;
+    font-size: 1.1em;
+}
+#register_avatar {
+    width: 220px;
+    height: 395px;
+}
+#register_avatar li {
+    width: 97px;
+    height: 97px;
+    display: inline-block;
+    /* border: 2px solid red; */
+}
+#register_avatar li img {
+    width: 92px;
+    height: 92px;
+    margin: 2px;
+}
+.register_box li.now img {
+    border: 3px solid #FF9966;
+}
+.registerPart1 input, .registerPart2 input {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    margin: 12px 30px;
+    outline: none;
+    font-size: 1em;
+    BORDER-RIGHT: #9a9999 0px solid;
+    BORDER-TOP:#9a9999 0px solid;
+    BORDER-LEFT: #9a9999 0px solid;
+    BORDER-BOTTOM: #9a9999 1px solid;
+}
+.registerPart3 {
+    padding: 10px;
+    margin: 12px 30px;
+    color: #666666;
+}
+.male, .female {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.registerButton {
+    width: 300px;
+    height: 150px;
+    margin-top: 10px;
+}
+.registerButton > * {
+    font-size: 1.5em;
+    color: #ffffff;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 46px;
+    margin-bottom: 20px;
+}
+#register {
+    width: 250px;
+    background-color: #66afe9;
+}
+#register_login {
+    width: 100px;
+    background-color: #66666688;
+}
+#returnBtn {
+    width: 100px;
+    background-color: #66666688;
+}
+#register:hover {
+    background-color: #77CCFF;
+    transition: 0.25s;
+}
+#register_login:hover, #returnBtn:hover {
+    background-color: #66666666;
+    transition: 0.25s;
+}
