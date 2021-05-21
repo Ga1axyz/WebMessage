@@ -23,6 +23,13 @@
 `lib` 文件夹包含了使用到的 jQuery 库包；
 
 `app.js` 为项目入口及 **程序启动文件**，负责与数据库的交互；
+
+# 数据库
+数据库包含两张表，`message`（聊天记录表）、`userInformation`（用户表），字段设置分别如下：
+
+[![QQ20210521191356.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521191356.png)](https://img.wang/image/qqjie-tu-20210521191356.bgy7o)
+[![QQ20210521191420.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521191420.png)](https://img.wang/image/qqjie-tu-20210521191420.bgRVr)
+
 # Demo 展示
 [![QQ20210521185300.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521185300.png)](https://img.wang/image/qqjie-tu-20210521185300.bgmki)
 [![QQ20210521185405.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521185405.png)](https://img.wang/image/qqjie-tu-20210521185405.bgjXY)
