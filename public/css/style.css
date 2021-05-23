@@ -20,15 +20,45 @@ body {
   min-width: 800px;
   height: 100%;
   margin: 0 auto;
-  background-color: pink;
+  background-color: #2e3238;
 }
 
-.user-list {
+.left-bd {
   width: 280px;
   height: 100%;
   float: left;
   position: relative;
+}
+
+.user-list {
+  width: 100%;
+  height: 90%;
+  float: left;
+  position: relative;
   background-color: #2e3238;
+  overflow: auto;
+  border-bottom: 1px solid #999999;
+}
+
+.exitBtn {
+  display: inline-block;
+  border: 1px solid #c1c1c1;
+  text-decoration: none;
+  background-color: #fff;
+  color: #222;
+  border-radius: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 18px;
+  text-align: center;
+  position: absolute;
+  width: 233px;
+  bottom: 18px;
+  left: 24px;
+}
+
+.exitBtn:hover {
+  background-color: #d8d8d8;
 }
 
 .box {
@@ -115,7 +145,7 @@ body {
 .message .content .nickname {
   font-weight: 400;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: 15px;
   height: 22px;
   line-height: 24px;
   color: #4f4f4f;
@@ -124,6 +154,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
+  margin-bottom: 2px;
 }
 
 .message .avatar {
@@ -145,7 +176,7 @@ body {
   position: relative;
   text-align: left;
   font-size: 20px;
-  border-radius: 3px;
+  border-radius: 16px;
   margin: 0 10px;
   background-color: #fff;
 }
@@ -155,33 +186,34 @@ body {
   cursor: pointer;
   max-width: 350px;
   max-height: 240px;
+  border-radius: 8px;
 }
 
 .other .bubble:before {
   position: absolute;
-  top: 14px;
-  left: -10px;
+  top: 9px;
+  left: -13px;
   border: 6px solid transparent;
   content: " ";
   border-right-color: #fff;
-  border-right-width: 4px;
+  border-right-width: 9px;
 }
 
 .my .bubble:before {
   position: absolute;
-  top: 14px;
-  right: -10px;
+  top: 9px;
+  right: -13px;
   border: 6px solid transparent;
   content: " ";
   border-left-color: #b2e281;
-  border-left-width: 4px;
+  border-left-width: 9px;
 }
 
 .bubble_cont {
   word-wrap: break-word;
   word-break: break-all;
   min-height: 25px;
-  padding: 9px 13px;
+  padding: 9px;
 }
 
 .box-ft {
@@ -194,7 +226,7 @@ body {
 }
 
 .box-ft .toolbar {
-  height: 30px;
+  height: 40px;
   padding: 5px 20px;
 }
 
@@ -322,7 +354,7 @@ body {
 }
 
 .title {
-  padding: 13px 18px 11px;
+  padding: 12px 18px 12px;
   border-bottom: 1px solid #999999;
   border-top: 1px solid #999999;
   color: #fff;
@@ -358,6 +390,7 @@ body {
   color: #fff;
   overflow: hidden;
   line-height: 36px;
+  margin-top: 6px;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -365,7 +398,7 @@ body {
 }
 ::-webkit-scrollbar {
   width: 6px;
-  height: 6px;
+  height: 0;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb {
