@@ -33,7 +33,7 @@
 # Demo 展示
 [![QQ20210521185300.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521185300.png)](https://img.wang/image/qqjie-tu-20210521185300.bgmki)
 [![QQ20210521185405.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521185405.png)](https://img.wang/image/qqjie-tu-20210521185405.bgjXY)
-[![QQ20210521185643.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521185643.png)](https://img.wang/image/qqjie-tu-20210521185643.bgJvF)
+[![QQ20210523191533.png](https://img.maocdn.cn/img/2021/05/23/QQ20210523191533.png)](https://img.wang/image/qqjie-tu-20210523191533.bVdTD)
 
 # 使用
 ## 项目启动：
@@ -55,11 +55,15 @@
 
 * [ ] 私聊功能
 
+* [ ] 修改密码功能
+
+## 待改进
+
 * [ ] 用户密码加密传输与存储
 
 * [ ] 防止 SQL 注入
 
-* [ ] 聊天窗口 CSS 样式优化
+* [ ] 聊天窗口 CSS 样式继续优化
 
 ## 待修复
 
