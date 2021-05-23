@@ -4,7 +4,7 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-19 21:30:46
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-05-20 19:49:27
+ * @LastEditTime: 2021-05-23 18:58:56
  */
 var socket = io('http://localhost:3000');
 
@@ -13,10 +13,7 @@ var username, password, sex, avatar;
 
 // ****************** 已发现但暂时未修复的 BUG ******************
 // 5.20
-// 当用户传入一张过大的图片，会导致图片发送失败，且用户会被踢下线，同时会带来一些诡异的连锁反应。。。
-
-
-
+// 当用户传入一张过大的图片，会导致图片发送失败，且用户会被踢下线
 
 
 // ****************** 登录功能 ******************
@@ -38,6 +35,10 @@ $('#loginBtn').on('click', () => {
         password: password
     })
 })
+
+// 此变量用来辅助在聊天界面按下 Ctrl+Enter 键发送消息的功能，防止在其他页面按下此组合键触发响应动作
+var ctrl_enter = 0;
+
 // 监听用户身份校验结果
 // 一方使用 emit() 发送事件后，另一方可以使用 on() 或者 once() 方法，对该事件进行监听 socket.on(event,function(data,fn){})
 socket.on('checkoutAnswer', data => {
@@ -50,7 +51,8 @@ socket.on('checkoutAnswer', data => {
         // 跳转到聊天室
         $('.login_box').fadeOut();  // 隐藏登录窗口 淡出效果
         $('.container').fadeIn();   // 显示聊天窗口 淡入效果
-        
+        ctrl_enter = 1;
+
         // 告诉 socket io 服务，用户登录成功
         // 这里参数中的头像信息通过查询数据库获取，在 app.js 中实现 
         socket.emit('login', {
@@ -115,6 +117,40 @@ socket.on('userList', data => {
     // 更新在线用户数量
     $('#userCount').text(data.length);
 })
+
+// 实现 Ctrl+Enter 发送消息
+window.addEventListener('keydown', e => {
+    if(e.key == 'Enter' && e.ctrlKey && ctrl_enter == 1){
+        // 获取聊天内容
+        var content = $('#content').html();
+        // 清空聊天内容
+        $('#content').html('');
+        if (!content)
+            return alert('发送内容不能为空！');
+        if (content.indexOf("进平") >= 0)   // indexOf()方法对大小写敏感，如果要检索的字符串值没有出现，则该方法返回 -1
+            return alert('别闹！再斟酌斟酌用词！');
+        let message = {
+            content: content,
+            username: username,
+            avatar: avatar,
+            type: 'html'
+        }
+        // 将相关信息发送给服务器
+        socket.emit('sendMessage', message);
+        console.log(message);
+    }
+})
+
+// 点击退出按钮退出聊天室
+$('.exitBtn').on('click', () => {
+    var msg = "你确定要退出聊天室吗？";
+    if (confirm(msg) == true){ 
+        location.reload();
+    } else{
+        return;
+    }
+})
+
 // 点击聊天消息发送按钮，未来可实现与优化敏感词过滤功能
 $('#btn-send').on('click', () => {
     // 获取聊天内容
@@ -144,7 +180,7 @@ socket.on('receiveMessage', data => {
                 <div class="my message">
                     <img class="avatar" src="${avatar}" alt="" />
                     <div class="content">
-                        <div style="margin-bottom: 3px;margin-right: 3px;font-size: 12px;color: #4f4f4f;">${data.time}</div>
+                        <div style="margin-bottom: 3px;margin-right: 6px;font-size: 15px;color: #4f4f4f;">${data.time}</div>
                         <div class="bubble">
                             <div class="bubble_cont">${data.content}</div>
                         </div>
@@ -198,9 +234,9 @@ socket.on('receiveImage', data => {
                 <div class="my message">
                     <img class="avatar" src="${data.avatar}" alt="" />
                     <div class="content">
-                        <div style="margin-bottom: 3px;margin-right: 3px;font-size: 12px;color: #4f4f4f;">${data.time}</div>
+                        <div style="margin-bottom: 3px;margin-right: 6px;font-size: 15px;color: #4f4f4f;">${data.time}</div>
                         <div class="bubble">
-                            <div class="bubble_cont">
+                            <div class="bubble_cont" style="padding: 9px 9px 4px 9px;">
                                 <img src="${data.content}"/>
                             </div>
                         </div>
@@ -217,7 +253,7 @@ socket.on('receiveImage', data => {
                     <div class="content">
                         <div class="nickname">${data.username} <span>${data.time}</span></div>
                         <div class="bubble">
-                            <div class="bubble_cont">
+                            <div class="bubble_cont" style="padding: 9px 9px 4px 9px;">
                                 <img src="${data.content}"/>
                             </div>
                         </div>
@@ -230,6 +266,10 @@ socket.on('receiveImage', data => {
     $('.box-bd img :last').on('load', () => {
         scrollIntoView();
     })
+})
+
+$('.loginTitle').on('click', () => {
+    alert("Hi~\nHave a nice day!");
 })
 // 借助 jquery-emoji 库，实现表情功能
 $('.face').on('click', () => {
