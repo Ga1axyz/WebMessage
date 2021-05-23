@@ -4,7 +4,7 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-14 11:29:45
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-05-20 19:01:28
+ * @LastEditTime: 2021-05-23 19:04:40
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>相亲相爱一家人</title>
-    <link rel="shortcut icon" href="images/favicon.ico"/>
-    <link rel="icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <link rel="stylesheet" href="lib/jquery-mCustomScrollbar/css/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" href="lib/jquery-emoji/css/jquery.emoji.css" />
     <link rel="stylesheet" href="css/style.css" />      <!-- 聊天界面CSS -->
@@ -88,26 +87,34 @@
     <!-- 聊天室部分 -->
     <div class="container" style="display: none;">
         <!-- 左侧用户部分 -->
-        <div class="user-list">
-            <div class="header">
-                <div class="avatar">
-                    <img class="img avatar_url" src="images/avatar09.jpg" alt="" />
+        <div class="left-bd">
+            <div class="user-list">
+                <div class="header">
+                    <div class="avatar">
+                        <img class="img avatar_url" src="images/avatar09.jpg" alt="" />
+                    </div>
+                    <div class="info">
+                        <h3 class="username">服务器打盹中😪</h3>
+                    </div>
                 </div>
-                <div class="info">
-                    <h3 class="username">服务器打盹中😪</h3>
+                <div class="title">
+                    <h3>当前在线</h3>
                 </div>
+                <ul>
+                    <!-- <li class="user">
+                        <div class="avatar"><img src="images/avatar05.jpeg" alt=""></div>
+                        <div class="name">root</div>
+                    </li>
+                    
+                    <li class="user">
+                        <div class="avatar"><img src="images/avatar08.jpeg" alt=""></div>
+                        <div class="name">admin</div>
+                    </li> -->
+                </ul>
             </div>
-            <div class="title">
-                <h3>用户列表</h3>
+            <div class="exit">
+                <a href="javascript:;" class="exitBtn">退出聊天</a>
             </div>
-            <ul>
-            <!-- 
-                <li class="user">
-                    <div class="avatar"><img src="images/avatar09.jpg" alt="" /></div>
-                    <div class="name">Ga1axy_z</div>
-                </li> 
-            -->
-            </ul>
         </div>
         <!-- 聊天主窗口 -->
         <div class="box">
@@ -117,35 +124,37 @@
             </div>
             <!-- 聊天窗口主体区域 -->
             <div class="box-bd">
-                <!--             
-                <div class="system">
+                
+                <!-- <div class="system">
                     <p class="message_system">
-                    <span class="content">admin加入了群聊</span>
+                        <span class="content">"root"加入了群聊</span>
                     </p>
-                </div>
-                <div class="message-box">
-                    <div class="my message">
-                    <img class="avatar" src="images/avatar02.jpeg" alt="" />
-                    <div class="content">
-                        <div style="margin-bottom: 3px;margin-right: 3px;">20/06/12 10:39</div>
-                        <div class="bubble">
-                            <div class="bubble_cont">在干嘛</div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+                </div> -->
+
                 <div class="message-box">
                     <div class="other message">
-                    <img class="avatar" src="images/avatar05.jpeg" alt="" />
-                    <div class="content">
-                        <div class="nickname">墨鼠 <span>20/06/12 10:40</span></div>
-                        <div class="bubble">
-                            <div class="bubble_cont">吃饭</div>
+                        <img class="avatar" src="images/avatar09.jpg" alt="">
+                        <div class="content">
+                            <div class="nickname">Ga1axy_z <span>21/05/20 18:07</span></div>
+                            <div class="bubble">
+                                <div class="bubble_cont">Hello</div>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="message-box">
+                    <div class="my message">
+                        <img class="avatar" src="images/avatar05.jpeg" alt="">
+                        <div class="content">
+                            <div style="margin-bottom: 3px;margin-right: 3px;font-size: 15px;color: #4f4f4f;">21/05/23 16:03</div>
+                            <div class="bubble">
+                                <div class="bubble_cont">Hi~</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                -->
+               
             </div>
             <!-- 聊天窗口底部区域 -->
             <div class="box-ft">
@@ -165,7 +174,7 @@
                 </div>
                 <!-- 发送按钮 -->
                 <div class="action">
-                    <!-- <span class="desc">按下Ctrl+Enter发送</span> --><!-- 此功能暂未实现 -->
+                    <span class="desc">按下 Ctrl+Enter 发送</span>
                     <!-- 给a标签加一个空js，消除a默认的返回顶部效果 -->
                     <a class="btn-send" id="btn-send" href="javascript:;">发送</a>
                 </div>
