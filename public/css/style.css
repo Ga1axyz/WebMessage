@@ -5,6 +5,7 @@
 }
 html,body {
   height: 100%;
+  width: 100%;
   box-sizing: border-box;
 }
 body {
@@ -64,7 +65,7 @@ body {
 .box {
   overflow: hidden;
   height: 100%;
-  background-color: #eee;
+  background-color: #FFFFFF;
   position: relative;
 }
 
@@ -113,7 +114,7 @@ body {
   display: inline-block;
   font-size: 13px;
   padding: 1px 18px;
-  color: #b2b2b2;
+  color: #878B97;
   border-radius: 2px;
 }
 
@@ -166,7 +167,8 @@ body {
 }
 
 .my.message .bubble {
-  background-color: #b2e281;
+  background-color: #1FBAFC;
+  color: #FBFFFF;
 }
 .message .bubble {
   max-width: 500px;
@@ -178,7 +180,7 @@ body {
   font-size: 20px;
   border-radius: 16px;
   margin: 0 10px;
-  background-color: #fff;
+  background-color: #E5E5E5;
 }
 
 .message .bubble img {
@@ -195,7 +197,7 @@ body {
   left: -13px;
   border: 6px solid transparent;
   content: " ";
-  border-right-color: #fff;
+  border-right-color: #E5E5E5;
   border-right-width: 9px;
 }
 
@@ -205,7 +207,7 @@ body {
   right: -13px;
   border: 6px solid transparent;
   content: " ";
-  border-left-color: #b2e281;
+  border-left-color: #1FBAFC;
   border-left-width: 9px;
 }
 
@@ -215,6 +217,10 @@ body {
   min-height: 25px;
   padding: 9px;
 }
+
+/* .bubble_cont img {
+  padding: 9px 9px 4px 9px;
+} */
 
 .box-ft {
   border-top: 1px solid #ccc;
@@ -277,12 +283,12 @@ body {
   height: 84px;
   font-size: 20px;
   margin-top: 6px;
-  background-color: #eee;
+  background-color: #FFFFFF;
 }
 
 .box-ft .action {
   text-align: right;
-  margin-top: 5px;
+  margin-top: 0px;
   padding-right: 20px;
 }
 
@@ -297,15 +303,15 @@ body {
   display: inline-block;
   border: 1px solid #c1c1c1;
   text-decoration: none;
-  background-color: #fff;
-  color: #222;
+  background-color: #676868;
+  color: #FCFCFC;
   border-radius: 4px;
-  padding: 3px 30px;
+  padding: 5px 30px;
   font-size: 16px;
 }
 
 .btn-send:hover {
-  background-color: #d8d8d8;
+  background-color: #9C9D9D;
 }
 
 .header {

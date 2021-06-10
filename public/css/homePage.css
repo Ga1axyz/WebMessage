@@ -4,7 +4,7 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-20 10:24:02
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-05-20 18:18:32
+ * @LastEditTime: 2021-06-10 17:06:06
  */
 
  /* 登录界面 */
@@ -43,10 +43,14 @@
     padding: 10px;
     outline: none;
     font-size: 0.48em;
-    BORDER-RIGHT: #9a9999 0px solid;
-    BORDER-TOP:#9a9999 0px solid;
-    BORDER-LEFT: #9a9999 0px solid;
-    BORDER-BOTTOM: #9a9999 1px solid;
+    BORDER-RIGHT: #A8A8A8 0px solid;
+    BORDER-TOP:#A8A8A8 0px solid;
+    BORDER-LEFT: #A8A8A8 0px solid;
+    BORDER-BOTTOM: #A8A8A8 1px solid;
+}
+.login_box input:hover {
+    border-color: #838383;
+    transition: 0.25s;
 }
 #username:focus, #password:focus, #register_username:focus, #register_password:focus {
     border-color: #2f99ff;
@@ -75,7 +79,7 @@ input[id='password']::-moz-placeholder {
     height: 45px;
     font-size: 1.5em;
     color: #ffffff;
-    background-color: #66afe9;
+    background-color: #07BCFC;
     border: none;
     border-radius: 5px;
 }
@@ -84,17 +88,17 @@ input[id='password']::-moz-placeholder {
     height: 45px;
     font-size: 1.5em;
     color: #ffffff;
-    background-color: #66666688;
+    background-color: #A8A8A8;
     border: none;
     border-radius: 5px;
     margin-left: 20px;
 }
 #loginBtn:hover {
-    background-color: #77CCFF;
+    background-color: #1DC5FC;
     transition: 0.25s;
 }
 #registerBtn:hover {
-    background-color: #66666666;
+    background-color: #838383;
     transition: 0.25s;
 }
 
@@ -165,10 +169,14 @@ input[id='password']::-moz-placeholder {
     margin: 12px 30px;
     outline: none;
     font-size: 1em;
-    BORDER-RIGHT: #9a9999 0px solid;
-    BORDER-TOP:#9a9999 0px solid;
-    BORDER-LEFT: #9a9999 0px solid;
-    BORDER-BOTTOM: #9a9999 1px solid;
+    BORDER-RIGHT: #A8A8A8 0px solid;
+    BORDER-TOP:#A8A8A8 0px solid;
+    BORDER-LEFT: #A8A8A8 0px solid;
+    BORDER-BOTTOM: #A8A8A8 1px solid;
+}
+.registerPart1 input:hover, .registerPart2 input:hover {
+    border-color: #838383;
+    transition: 0.25s;
 }
 .registerPart3 {
     padding: 10px;
@@ -195,18 +203,18 @@ input[id='password']::-moz-placeholder {
 }
 #register {
     width: 250px;
-    background-color: #66afe9;
+    background-color: #07BCFC;
 }
 #register_login {
     width: 100px;
-    background-color: #66666688;
+    background-color: #A8A8A8;
 }
 #returnBtn {
     width: 100px;
-    background-color: #66666688;
+    background-color: #A8A8A8;
 }
 #register:hover {
-    background-color: #77CCFF;
+    background-color: #1DC5FC;
     transition: 0.25s;
 }
 #register_login:hover, #returnBtn:hover {
