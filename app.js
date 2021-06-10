@@ -4,11 +4,14 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-20 08:11:31
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-05-20 11:13:45
+ * @LastEditTime: 2021-06-10 16:40:34
  */
 const app = require('express')();   // 导入 Express 模块，并创建一个 Express 应用
+
+// 服务端开启连接
 const server = require('http').Server(app); // 这句话的作用可参考 https://cnodejs.org/topic/5396cd60c3ee0b5820f00e2a
 const io = require('socket.io')(server);
+
 const path = require('path');   // path 模块提供了一些用于处理文件路径的小工具
 const chinaTime = require('china-time');
 const db = require('./database/dbprocess.js');
@@ -57,6 +60,7 @@ function initMessage(socket) {
 
 // ****************** 业务逻辑实现 ******************
 
+// 监听客户端连接，连接成功后，回调函数会传递本次连接的socket
 io.on('connection', function (socket) {
     socket.on('checkoutLogin', data => {
         let msg = '', resultData = '';
