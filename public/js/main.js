@@ -4,8 +4,10 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-19 21:30:46
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-05-23 18:58:56
+ * @LastEditTime: 2021-06-10 16:59:19
  */
+
+// 客户端开启连接
 var socket = io('http://localhost:3000');
 
 var username, password, sex, avatar;
@@ -48,11 +50,6 @@ socket.on('checkoutAnswer', data => {
     } else if (data.msg === '用户密码错误') {
         alert('密码错误！\n请重新输入！');
     } else if (data.msg === '用户密码正确') {
-        // 跳转到聊天室
-        $('.login_box').fadeOut();  // 隐藏登录窗口 淡出效果
-        $('.container').fadeIn();   // 显示聊天窗口 淡入效果
-        ctrl_enter = 1;
-
         // 告诉 socket io 服务，用户登录成功
         // 这里参数中的头像信息通过查询数据库获取，在 app.js 中实现 
         socket.emit('login', {
@@ -63,8 +60,10 @@ socket.on('checkoutAnswer', data => {
 })
 // 监听登陆成功的请求
 socket.on('loginSuccess', data => {
+    // 跳转到聊天室
     $('.login_box').fadeOut();   // 隐藏登录窗口 淡出效果
     $('.container').fadeIn();    // 显示聊天窗口 淡入效果
+    ctrl_enter = 1;
     // 设置个人信息，用于在聊天窗口中标识当前用户身份
     $('.avatar_url').attr('src', data.avatar);   // jQuery attr()方法设置或返回被选元素的属性和值
     $('.user-list .username').text(data.username);   // jQuery text()方法设置或返回被选元素的文本内容
