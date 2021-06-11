@@ -2,7 +2,7 @@
 # 介绍
 本项目为 **基于 Node.js 的在线聊天室**，实现较易，适合初学者练手
 
-此项目是基于 [https://gitee.com/hebugui/web_qqchating](https://gitee.com/hebugui/web_qqchating) 优化完善的开源项目
+此项目是基于 [https://gitee.com/hebugui/web_qqchating](https://gitee.com/hebugui/web_qqchating) 优化完善的开源项目，增添了新的业务功能，优化了代码逻辑与页面样式。
 # 采用技术
 **HTML + CSS + JS + Node.js + Mysql + JQuery**
 
@@ -10,7 +10,7 @@
 * JQuery 库包括 `jquery-emoji / jquery-mCustomScrollbar`
 
 # 项目结构
-[![QQ20210521183539.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521183539.png)](https://img.wang/image/qqjie-tu-20210521183539.bgd3d)
+[![2hsRg0.png](https://z3.ax1x.com/2021/06/11/2hsRg0.png)](https://imgtu.com/i/2hsRg0)
 
 由上至下，各文件分别为
 
@@ -27,13 +27,27 @@
 # 数据库
 数据库包含两张表，`message`（聊天记录表）、`userInformation`（用户表），字段设置分别如下：
 
-[![QQ20210521191356.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521191356.png)](https://img.wang/image/qqjie-tu-20210521191356.bgy7o)
-[![QQ20210521191420.png](https://img.maocdn.cn/img/2021/05/21/QQ20210521191420.png)](https://img.wang/image/qqjie-tu-20210521191420.bgRVr)
+[![2hsdjf.png](https://z3.ax1x.com/2021/06/11/2hsdjf.png)](https://imgtu.com/i/2hsdjf)
+
+[![2hssEQ.png](https://z3.ax1x.com/2021/06/11/2hssEQ.png)](https://imgtu.com/i/2hssEQ)
 
 # Demo 展示
-[![QQ20210610183326.png](https://img.maocdn.cn/img/2021/06/10/QQ20210610183326.png)](https://img.wang/image/qqjie-tu-20210610183326.ocRJB)
-[![QQ20210610183400.png](https://img.maocdn.cn/img/2021/06/10/QQ20210610183400.png)](https://img.wang/image/qqjie-tu-20210610183400.ocahm)
-[![QQ20210610183239.png](https://img.maocdn.cn/img/2021/06/10/QQ20210610183239.png)](https://img.wang/image/qqjie-tu-20210610183239.ocwz7)
+
+登录界面：
+[![2hrJS0.png](https://z3.ax1x.com/2021/06/11/2hrJS0.png)](https://imgtu.com/i/2hrJS0)
+
+注册界面：
+[![2hrtyT.png](https://z3.ax1x.com/2021/06/11/2hrtyT.png)](https://imgtu.com/i/2hrtyT)
+
+多人聊天界面：
+[![2hrySx.png](https://z3.ax1x.com/2021/06/11/2hrySx.png)](https://imgtu.com/i/2hrySx)
+
+私人聊天界面：
+[![2hsKc6.png](https://z3.ax1x.com/2021/06/11/2hsKc6.png)](https://imgtu.com/i/2hsKc6)
+
+[![2hslnO.png](https://z3.ax1x.com/2021/06/11/2hslnO.png)](https://imgtu.com/i/2hslnO)
+
+[![2hs1BD.png](https://z3.ax1x.com/2021/06/11/2hs1BD.png)](https://imgtu.com/i/2hs1BD)
 
 # 使用
 ## 项目启动：
@@ -52,8 +66,6 @@
 
 # 优化与改进
 ## 待实现
-
-* [ ] 私聊功能
 
 * [ ] 修改密码功能
 
