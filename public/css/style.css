@@ -73,9 +73,10 @@ body {
   text-align: center;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 5%;
+  width: 90%;
   line-height: 30px;
+  font-family:'VisbyRoundCF-Bold';
 }
 
 .box-hd h3 {
@@ -397,6 +398,12 @@ body {
   overflow: hidden;
   line-height: 36px;
   margin-top: 6px;
+}
+
+.backBtn {
+  float: right;
+  opacity: 0.5;
+  display: none;
 }
 
 ::-webkit-scrollbar-track-piece {
