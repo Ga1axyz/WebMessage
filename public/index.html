@@ -4,7 +4,7 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-14 11:29:45
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-06-10 18:01:51
+ * @LastEditTime: 2021-06-11 15:31:28
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,10 @@
     <link rel="stylesheet" href="lib/jquery-emoji/css/jquery.emoji.css" />
     <link rel="stylesheet" href="css/style.css" />      <!-- 聊天界面CSS -->
     <link rel="stylesheet" href="css/homePage.css" />   <!-- 登录注册界面CSS -->
-    <link href='http://cdn.repository.webfont.com/webfonts/nomal/144586/47007/60a60a8bf629d8c6a4d34a7d.css' rel='stylesheet' type='text/css' /></head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/144601/47019/60c31129f629d8986039bee1.css' rel='stylesheet' type='text/css' />
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/144586/47007/60a60a8bf629d8c6a4d34a7d.css' rel='stylesheet' type='text/css' />
+</head>
 <body>
 
     <!-- 主要思路为通过 jquery 的 fadeOut() fadeIn() 方法控制 display 属性，进而控制各个部分的切换  -->
@@ -100,15 +103,15 @@
                 <div class="title">
                     <h3>当前在线</h3>
                 </div>
-                <ul>
+                <ul class="user-ul">
                     <!-- <li class="user">
                         <div class="avatar"><img src="images/avatar05.jpeg" alt=""></div>
-                        <div class="name">root</div>
+                        <div class="name">测试1</div>
                     </li>
                     
                     <li class="user">
                         <div class="avatar"><img src="images/avatar08.jpeg" alt=""></div>
-                        <div class="name">admin</div>
+                        <div class="name">测试2</div>
                     </li> -->
                 </ul>
             </div>
@@ -120,8 +123,12 @@
         <div class="box">
             <!-- 聊天窗口头部 -->
             <div class="box-hd">
-                <h3>相亲相爱一家人(<span id="userCount">99+</span>)</h3>
+                <h3>Ga1axy_z's WebMessage (<span id="userCount">99+</span>)</h3>
             </div>
+            <!-- 返回公共聊天按钮 -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="backBtn bi bi-arrow-left-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+            </svg>
             <!-- 聊天窗口主体区域 -->
             <div class="box-bd">
                 
