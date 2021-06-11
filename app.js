@@ -4,7 +4,7 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-20 08:11:31
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-06-10 16:40:34
+ * @LastEditTime: 2021-06-11 17:01:39
  */
 const app = require('express')();   // 导入 Express 模块，并创建一个 Express 应用
 
@@ -40,9 +40,9 @@ db.selectAll('select count(*) as sum from message', (e, r) => {
     id_now = r[0].sum + 1;
 })
 
-// 实现进入聊天室后加载历史消息
-function initMessage(socket) {
-    db.selectAll('select * from message order by id asc', (e, res) => {
+// 实现进入聊天室后加载历史消息，公共聊天室，加载公共聊天记录
+function initMessage(socket, field) {
+    db.selectAll('select * from message where receive="'+ field +'" order by id asc', (e, res) => {
         for (var i = 0; i < res.length; i++) {
             if(res[i].type === 'image') {
                 socket.emit('receiveImage', res[i]);
@@ -53,7 +53,23 @@ function initMessage(socket) {
                 console.log('历史消息：');
                 console.log(res[i]);
             }
-
+        }
+    })
+}
+// 加载私聊记录
+function initPrivateMessage(socket, receive_user, send_user) {
+    var sql = 'select * from message where (receive="'+ receive_user +'"' + ' and send="' + send_user + '") or (send="'+ receive_user +'"' + ' and receive="' + send_user + '") order by id asc';
+    db.selectAll(sql, (e, res) => {
+        for (var i = 0; i < res.length; i++) {
+            if(res[i].type === 'image') {
+                socket.emit('receiveImage', res[i]);
+                console.log('历史消息：');
+                console.log(res[i]);
+            }else{
+                socket.emit('receiveMessage', res[i]);
+                console.log('历史消息：');
+                console.log(res[i]);
+            }
         }
     })
 }
@@ -61,6 +77,7 @@ function initMessage(socket) {
 // ****************** 业务逻辑实现 ******************
 
 // 监听客户端连接，连接成功后，回调函数会传递本次连接的socket
+// 当前端执行 socket = io.connect('ws://'+host); 的时候，此处的 io 会监听到 connection 事件
 io.on('connection', function (socket) {
     socket.on('checkoutLogin', data => {
         let msg = '', resultData = '';
@@ -99,7 +116,10 @@ io.on('connection', function (socket) {
             io.emit('addUser', data);
             io.emit('userList', users);
 
-            initMessage(socket);
+            // 辅助实现私聊功能
+            socket.join(data.username);
+
+            initMessage(socket, "all");
         }
     })
     socket.on('registerUser', data => {
@@ -118,7 +138,7 @@ io.on('connection', function (socket) {
             }
         })
     })
-    // 监听当前用户断开连接
+    // 监听当前用户断开连接，当前端页面关闭，或者失去连接时，后端会接收到 disconnect 事件
     socket.on('disconnect', () => {
         if(socket.username === 'undefined') return;
         // 把当前用户从 user[] 中删除
@@ -140,7 +160,9 @@ io.on('connection', function (socket) {
             content: data.content,
             time: time,
             avatar:data.avatar,
-            type: data.type
+            type: data.type,
+            receive: data.receive,
+            send: data.send
         }
         db.insertData('message', saveData, (e, r) => {
             console.log('消息存入成功');
@@ -148,8 +170,12 @@ io.on('connection', function (socket) {
         })
         console.log('文本消息');
         console.log(saveData);
-
-        io.emit('receiveMessage', saveData);
+        if (data.receive == "all") {
+            io.emit('receiveMessage', saveData);
+        } else {
+            socket.emit('receiveMessage', saveData);
+            io.in(data.receive).emit('receiveMessage', saveData);
+        }
     })
     // 监听发送图片聊天消息
     socket.on('sendImage', data => {
@@ -160,7 +186,9 @@ io.on('connection', function (socket) {
             content: data.img,
             time: time,
             avatar:data.avatar,
-            type: data.type
+            type: data.type,
+            receive: data.receive,
+            send: data.send
         }
         db.insertData('message', saveData, (e, r) => {
             console.log('消息存入成功');
@@ -169,6 +197,19 @@ io.on('connection', function (socket) {
         console.log('图片消息');
         console.log(saveData);
 
-        io.emit('receiveImage', saveData);
+        if (data.receive == "all") {
+            io.emit('receiveImage', saveData);
+        } else {
+            socket.emit('receiveImage', saveData);
+            io.in(data.receive).emit('receiveImage', saveData);
+        }
+    })
+    // 以下为私聊功能
+    socket.on('privateChat', data => {
+        initPrivateMessage(socket, data.receive_user, data.send_user);
+    })
+    // 返回公共聊天
+    socket.on('publicChat', () => {
+        initMessage(socket, "all");
     })
 })
