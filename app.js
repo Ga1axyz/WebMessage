@@ -4,7 +4,7 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-20 08:11:31
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-06-11 17:01:39
+ * @LastEditTime: 2021-06-17 09:31:06
  */
 const app = require('express')();   // 导入 Express 模块，并创建一个 Express 应用
 
@@ -173,8 +173,12 @@ io.on('connection', function (socket) {
         if (data.receive == "all") {
             io.emit('receiveMessage', saveData);
         } else {
-            socket.emit('receiveMessage', saveData);
-            io.in(data.receive).emit('receiveMessage', saveData);
+            if (data.receive == data.send) {
+                socket.emit('receiveMessage', saveData);
+            } else {
+                socket.emit('receiveMessage', saveData);
+                io.in(data.receive).emit('receiveMessage', saveData);
+            }
         }
     })
     // 监听发送图片聊天消息
@@ -200,8 +204,12 @@ io.on('connection', function (socket) {
         if (data.receive == "all") {
             io.emit('receiveImage', saveData);
         } else {
-            socket.emit('receiveImage', saveData);
-            io.in(data.receive).emit('receiveImage', saveData);
+            if (data.receive == data.send) {
+                socket.emit('receiveImage', saveData);
+            } else {
+                socket.emit('receiveImage', saveData);
+                io.in(data.receive).emit('receiveImage', saveData);
+            }
         }
     })
     // 以下为私聊功能
