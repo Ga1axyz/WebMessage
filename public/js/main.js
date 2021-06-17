@@ -4,7 +4,7 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-19 21:30:46
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-06-17 10:40:56
+ * @LastEditTime: 2021-06-17 13:04:08
  */
 
 // 客户端开启连接
@@ -242,6 +242,11 @@ socket.on('receiveMessage', data => {
     if (data.receive != "all") {
         privateMessageJudge = ' ';
     }
+    // 使私聊界面不显示 悄悄话 字段
+    if (private_chat == 1) {
+        privateMessageJudge = 'none';
+        $('.whisper').attr("style","display: none;");
+    }
     if (data.username === username) {
         // 当前用户发送的消息
         $('.box-bd').append(`
@@ -312,6 +317,11 @@ socket.on('receiveImage', data => {
     var privateMessageJudge = 'none';
     if (data.receive != "all") {
         privateMessageJudge = ' ';
+    }
+    // 使私聊界面不显示 悄悄话 字段
+    if (private_chat == 1) {
+        privateMessageJudge = 'none';
+        $('.whisper').attr("style","display: none;");
     }
     if (data.username === username) {
         // 当前用户发送的消息
@@ -456,7 +466,7 @@ $('.face').on('click', () => {
                 31: "生气",
                 32: "惊讶",
                 33: "喷",
-                34: "爱心",
+                34: "Give U My Heart",
                 35: "心碎",
                 36: "玫瑰",
                 37: "礼物",
