@@ -4,7 +4,7 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-19 21:30:46
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-06-17 13:04:08
+ * @LastEditTime: 2021-06-17 13:22:36
  */
 
 // 客户端开启连接
@@ -247,36 +247,40 @@ socket.on('receiveMessage', data => {
         privateMessageJudge = 'none';
         $('.whisper').attr("style","display: none;");
     }
-    if (data.username === username) {
-        // 当前用户发送的消息
-        $('.box-bd').append(`
-            <div class="message-box">
-                <div class="my message">
-                    <img class="avatar" src="${avatar}" alt="" />
-                    <div class="content">
-                        <div style="margin-bottom: 3px;margin-right: 6px;font-size: 15px;color: #4f4f4f;">${data.time}</div>
-                        <div class="bubble">
-                            <div class="bubble_cont">${data.content}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `)
+    // 处于私聊界面时，不更新全体消息
+    if (data.receive == "all" && private_chat == 1){
     } else {
-        // 其它用户发送的消息
-        $('.box-bd').append(`
-            <div class="message-box">
-                <div class="other message">
-                    <img class="avatar" src="${data.avatar}" alt="" />
-                    <div class="content">
-                        <div class="nickname">${data.username} <span>${data.time} </span><span class="whisper" style="display: ${privateMessageJudge};color: #FF6666;">悄悄话</span></div>
-                        <div class="bubble">
-                            <div class="bubble_cont">${data.content}</div>
+        if (data.username === username) {
+            // 当前用户发送的消息
+            $('.box-bd').append(`
+                <div class="message-box">
+                    <div class="my message">
+                        <img class="avatar" src="${avatar}" alt="" />
+                        <div class="content">
+                            <div style="margin-bottom: 3px;margin-right: 6px;font-size: 15px;color: #4f4f4f;">${data.time}</div>
+                            <div class="bubble">
+                                <div class="bubble_cont">${data.content}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        `)
+            `)
+        } else {
+            // 其它用户发送的消息
+            $('.box-bd').append(`
+                <div class="message-box">
+                    <div class="other message">
+                        <img class="avatar" src="${data.avatar}" alt="" />
+                        <div class="content">
+                            <div class="nickname">${data.username} <span>${data.time} </span><span class="whisper" style="display: ${privateMessageJudge};color: #FF6666;">悄悄话</span></div>
+                            <div class="bubble">
+                                <div class="bubble_cont">${data.content}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `)
+        }
     }
     scrollIntoView();
 })
@@ -323,40 +327,44 @@ socket.on('receiveImage', data => {
         privateMessageJudge = 'none';
         $('.whisper').attr("style","display: none;");
     }
-    if (data.username === username) {
-        // 当前用户发送的消息
-        $('.box-bd').append(`
-            <div class="message-box">
-                <div class="my message">
-                    <img class="avatar" src="${data.avatar}" alt="" />
-                    <div class="content">
-                        <div style="margin-bottom: 3px;margin-right: 6px;font-size: 15px;color: #4f4f4f;">${data.time}</div>
-                        <div class="bubble">
-                            <div class="bubble_cont" style="padding: 9px 9px 4px 9px;">
-                                <img src="${data.content}"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `)
+    // 处于私聊界面时，不更新全体消息
+    if (data.receive == "all" && private_chat == 1){
     } else {
-        // 其它用户发送的消息
-        $('.box-bd').append(`
-            <div class="message-box">
-                <div class="other message">
-                    <img class="avatar" src="${data.avatar}" alt="" />
-                    <div class="content">
-                        <div class="nickname">${data.username} <span>${data.time} </span><span class="whisper" style="display: ${privateMessageJudge};color: #FF6666;">悄悄话</span></div>
-                        <div class="bubble">
-                            <div class="bubble_cont" style="padding: 9px 9px 4px 9px;">
-                                <img src="${data.content}"/>
+        if (data.username === username) {
+            // 当前用户发送的消息
+            $('.box-bd').append(`
+                <div class="message-box">
+                    <div class="my message">
+                        <img class="avatar" src="${data.avatar}" alt="" />
+                        <div class="content">
+                            <div style="margin-bottom: 3px;margin-right: 6px;font-size: 15px;color: #4f4f4f;">${data.time}</div>
+                            <div class="bubble">
+                                <div class="bubble_cont" style="padding: 9px 9px 4px 9px;">
+                                    <img src="${data.content}"/>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        `)
+            `)
+        } else {
+            // 其它用户发送的消息
+            $('.box-bd').append(`
+                <div class="message-box">
+                    <div class="other message">
+                        <img class="avatar" src="${data.avatar}" alt="" />
+                        <div class="content">
+                            <div class="nickname">${data.username} <span>${data.time} </span><span class="whisper" style="display: ${privateMessageJudge};color: #FF6666;">悄悄话</span></div>
+                            <div class="bubble">
+                                <div class="bubble_cont" style="padding: 9px 9px 4px 9px;">
+                                    <img src="${data.content}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `)
+        }
     }
     // 等待图片加载完成
     $('.box-bd img :last').on('load', () => {
