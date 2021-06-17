@@ -4,7 +4,7 @@
  * @Author: Ga1axy_z
  * @Date: 2021-05-19 21:30:46
  * @LastEditors: Ga1axy_z
- * @LastEditTime: 2021-06-11 15:21:01
+ * @LastEditTime: 2021-06-17 10:40:56
  */
 
 // 客户端开启连接
@@ -237,6 +237,11 @@ $('#btn-send').on('click', () => {
 })
 // 实时更新文本类型的聊天记录
 socket.on('receiveMessage', data => {
+    // 此变量用于提示用户此条消息为私聊消息
+    var privateMessageJudge = 'none';
+    if (data.receive != "all") {
+        privateMessageJudge = ' ';
+    }
     if (data.username === username) {
         // 当前用户发送的消息
         $('.box-bd').append(`
@@ -259,7 +264,7 @@ socket.on('receiveMessage', data => {
                 <div class="other message">
                     <img class="avatar" src="${data.avatar}" alt="" />
                     <div class="content">
-                        <div class="nickname">${data.username} <span>${data.time}</span></div>
+                        <div class="nickname">${data.username} <span>${data.time} </span><span class="whisper" style="display: ${privateMessageJudge};color: #FF6666;">悄悄话</span></div>
                         <div class="bubble">
                             <div class="bubble_cont">${data.content}</div>
                         </div>
@@ -304,6 +309,10 @@ $('#file').on('change', function () {
 })
 // 实时更新图片类型的聊天记录
 socket.on('receiveImage', data => {
+    var privateMessageJudge = 'none';
+    if (data.receive != "all") {
+        privateMessageJudge = ' ';
+    }
     if (data.username === username) {
         // 当前用户发送的消息
         $('.box-bd').append(`
@@ -328,7 +337,7 @@ socket.on('receiveImage', data => {
                 <div class="other message">
                     <img class="avatar" src="${data.avatar}" alt="" />
                     <div class="content">
-                        <div class="nickname">${data.username} <span>${data.time}</span></div>
+                        <div class="nickname">${data.username} <span>${data.time} </span><span class="whisper" style="display: ${privateMessageJudge};color: #FF6666;">悄悄话</span></div>
                         <div class="bubble">
                             <div class="bubble_cont" style="padding: 9px 9px 4px 9px;">
                                 <img src="${data.content}"/>
