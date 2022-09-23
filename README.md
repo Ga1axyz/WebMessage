@@ -64,11 +64,11 @@
 
 ## 群聊
 
-![群聊1.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-11.png.png)
+![群聊1.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-11.png)
 
-![群聊2.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-24.png.png)
+![群聊2.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-24.png)
 
-![群聊说明.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-05-13.png.png)
+![群聊说明.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-05-13.png)
 
 ## 私聊
 
