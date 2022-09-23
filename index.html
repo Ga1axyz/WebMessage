@@ -1,0 +1,200 @@
+<!--
+ * @Descripttion: WebMessage 前端页面
+ * @version: 1.0
+ * @Author: Ga1axy_z
+ * @Date: 2021-05-14 11:29:45
+ * @LastEditors: Ga1axy_z
+ * @LastEditTime: 2022-09-23 09:54:41
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ChatRoom DesignedBy - Ga1axy_z</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link rel="stylesheet" href="lib/jquery-mCustomScrollbar/css/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href="lib/jquery-emoji/css/jquery.emoji.css" />
+    <link rel="stylesheet" href="css/style.css" />      <!-- 聊天界面CSS -->
+    <link rel="stylesheet" href="css/homePage.css" />   <!-- 登录注册界面CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- 登陆页面英文字体CSS https://www.webfont.com/ -->
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/144601/47007/632d1169f629d80dccaacc77.css' rel='stylesheet' type='text/css' />
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/144586/47007/60a60a8bf629d8c6a4d34a7d.css' rel='stylesheet' type='text/css' />
+</head>
+<body>
+
+    <!-- 主要思路为通过 jquery 的 fadeOut() fadeIn() 方法控制 display 属性，进而控制各个部分的切换  -->
+
+    <!-- 注册部分 -->
+    <div class="register_box"  style="display: none;">
+        <div class="registerTitle">用户注册</div>
+        <div class="registerBox">
+            <div class="registerStage">
+                <div class="registerLeft">
+                    <div class="registerPart1">
+                        <!-- <div class="part1title">用户名</div> -->
+                        <input class="input" type="text" placeholder="请输入用户名" id="register_username"><br>
+                    </div>
+                    <div class="registerPart2">
+                        <!-- <div class="part2title">密码</div> -->
+                        <input class="input" type="text" placeholder="请输入密码" id="register_password"><br>
+                    </div>
+                    <div class="registerPart3" id="sex">
+                        <div class="part3title">性别：</div>
+                        <div class="male">男</div>
+                        <input type="radio" value="male" name="sex">
+                        <div class="female">女</div>
+                        <input type="radio" value="female" name="sex">
+                    </div>
+                </div>
+                <div class="registerButton">
+                    <button id="register">注册</button>
+                    <button id="register_login">登录</button>
+                    <button id="returnBtn">返回</button>
+                </div>
+            </div>
+            <div class="registerPart4">
+                <div class="part4title">头像：</div>
+                <ul id="register_avatar">
+                    <li class="now"><img src="images/avatar01.jpeg" alt="" /></li>
+                    <li><img src="images/avatar02.jpeg" alt="" /></li>
+                    <li><img src="images/avatar03.jpeg" alt="" /></li>
+                    <li><img src="images/avatar04.jpeg" alt="" /></li>
+                    <li><img src="images/avatar05.jpeg" alt="" /></li>
+                    <li><img src="images/avatar06.jpeg" alt="" /></li>
+                    <li><img src="images/avatar07.jpeg" alt="" /></li>
+                    <li><img src="images/avatar08.jpeg" alt="" /></li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录部分 -->
+    <div class="login_box" style="display: block;">
+        <div class="loginTitle">Ga1axy_z's WebMessage</div>
+        <div class="loginPart1">
+            <!-- <div class="part1Info">用户名</div> -->
+            <input type="text" placeholder="请输入用户名" id="username" />
+        </div>
+        <div class="loginPart2">
+            <!-- <div class="part2Info">密码</div> -->
+            <input type="password" placeholder="请输入密码" id="password" />
+        </div>
+        <div class="loginButton">
+            <button id="loginBtn">登录</button>
+            <button id="registerBtn">注册</button>
+        </div>
+    </div>
+
+    <!-- 聊天室部分 -->
+    <div class="container" style="display: none;">
+        <!-- 左侧用户部分 -->
+        <div class="left-bd">
+            <div class="user-list">
+                <div class="header">
+                    <div class="avatar">
+                        <img class="img avatar_url" src="images/avatar09.jpg" alt="" />
+                    </div>
+                    <div class="info">
+                        <h3 class="username">服务器打盹中😪</h3>
+                    </div>
+                </div>
+                <div class="title">
+                    <h3>当前在线</h3>
+                </div>
+                <ul class="user-ul">
+                    <!-- <li class="user">
+                        <div class="avatar"><img src="images/avatar05.jpeg" alt=""></div>
+                        <div class="name">测试1</div>
+                    </li>
+                    
+                    <li class="user">
+                        <div class="avatar"><img src="images/avatar08.jpeg" alt=""></div>
+                        <div class="name">测试2</div>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="exit">
+                <a href="javascript:;" class="exitBtn">退出聊天</a>
+            </div>
+        </div>
+        <!-- 聊天主窗口 -->
+        <div class="box">
+            <!-- 聊天窗口头部 -->
+            <div class="box-hd">
+                <h3>Ga1axy_z's WebMessage (<span id="userCount">99+</span>)</h3>
+            </div>
+            <!-- 返回公共聊天按钮 -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="backBtn bi bi-arrow-left-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+            </svg>
+            <!-- 聊天窗口主体区域 -->
+            <div class="box-bd">
+                
+                <!-- <div class="system">
+                    <p class="message_system">
+                        <span class="content">"root"加入了群聊</span>
+                    </p>
+                </div> -->
+
+                <!-- <div class="message-box">
+                    <div class="other message">
+                        <img class="avatar" src="images/avatar09.jpg" alt="">
+                        <div class="content">
+                            <div class="nickname">Ga1axy_z <span>21/05/20 18:07</span></div>
+                            <div class="bubble">
+                                <div class="bubble_cont">Hello</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-box">
+                    <div class="my message">
+                        <img class="avatar" src="images/avatar05.jpeg" alt="">
+                        <div class="content">
+                            <div style="margin-bottom: 3px;margin-right: 3px;font-size: 15px;color: #4f4f4f;">21/05/23 16:03</div>
+                            <div class="bubble">
+                                <div class="bubble_cont">Hi~</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+               
+            </div>
+            <!-- 聊天窗口底部区域 -->
+            <div class="box-ft">
+                <!-- 工具栏 -->
+                <div class="toolbar">
+                    <a href="javascript:;" title="表情" class="face"></a>
+                    <!-- <a href="javascript:;" title="截屏" class="screen-cut"></a> -->
+                    <a href="javascript:;" title="图片" class="file">
+                        <label for="file"></label>
+                        <input type="file" id="file" style="display: none;">
+                    </a>
+                </div>
+                <!-- 内容输入区域 -->
+                <div class="content">
+                    <!-- div添加一个属性：contenteditable 可编辑div文本内容-->
+                    <div class="text" id="content" contenteditable></div>
+                </div>
+                <!-- 发送按钮 -->
+                <div class="action">
+                    <span class="desc">按下 Ctrl+Enter 发送</span>
+                    <!-- 给a标签加一个空js，消除a默认的返回顶部效果 -->
+                    <a class="btn-send" id="btn-send" href="javascript:;">发送</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入socketio -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script src="./lib/jquery-mCustomScrollbar/script/jquery.mCustomScrollbar.min.js"></script>
+    <script src="./lib/jquery-emoji/js/jquery.emoji.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
