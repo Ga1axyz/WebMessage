@@ -27,9 +27,9 @@
 # 数据库
 数据库包含两张表，`message`（聊天记录表）、`userInformation`（用户表，注意 `I` 在这里是大写），字段设置分别如下：
 
-[![message表.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/navicat_09-44-18.png)
+![message表.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/navicat_09-44-18.png)
 
-[![userInformation表.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/navicat_09-44-52.png)
+![userInformation表.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/navicat_09-44-52.png)
 
 # 使用
 ## 本地测试：
@@ -40,7 +40,7 @@
 
 * 然后浏览器访问 `http://localhost:3000` 即可
 
-[![启动项目.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-47-10.png)
+![启动项目.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-47-10.png)
 
 ## 在线部署：
 
@@ -54,27 +54,27 @@
 
 ## 登录 & 注册
 
-[![登录页面.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-55-01.png)
+![登录页面.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-55-01.png)
 
-[![登录成功.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-59-13.png)
+![登录成功.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-59-13.png)
 
-[![注册页面.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-56-51.png)
+![注册页面.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-56-51.png)
 
-[![注册成功.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-58-21.png)
+![注册成功.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-58-21.png)
 
 ## 群聊
 
-[![群聊1.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-11.png.png)
+![群聊1.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-11.png.png)
 
-[![群聊2.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-24.png.png)
+![群聊2.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-24.png.png)
 
-[![群聊说明.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-05-13.png.png)
+![群聊说明.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-05-13.png.png)
 
 ## 私聊
 
-[![私聊1.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-08-49.png)
+![私聊1.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-08-49.png)
 
-[![私聊2.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-09-53.png)
+![私聊2.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-09-53.png)
 
 # 优化与改进
 ## 待实现
