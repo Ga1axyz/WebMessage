@@ -10,7 +10,7 @@
 * JQuery 库包括 `jquery-emoji / jquery-mCustomScrollbar`
 
 # 项目结构
-[![2hsRg0.png](https://z3.ax1x.com/2021/06/11/2hsRg0.png)](https://imgtu.com/i/2hsRg0)
+![项目结构.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/Code_09-47-39.png)
 
 由上至下，各文件分别为
 
@@ -25,36 +25,22 @@
 `app.js` 为项目入口及 **程序启动文件**，负责与数据库的交互；
 
 # 数据库
-数据库包含两张表，`message`（聊天记录表）、`userInformation`（用户表），字段设置分别如下：
+数据库包含两张表，`message`（聊天记录表）、`userInformation`（用户表，注意 `I` 在这里是大写），字段设置分别如下：
 
-[![2hsdjf.png](https://z3.ax1x.com/2021/06/11/2hsdjf.png)](https://imgtu.com/i/2hsdjf)
+[![message表.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/navicat_09-44-18.png)
 
-[![2hssEQ.png](https://z3.ax1x.com/2021/06/11/2hssEQ.png)](https://imgtu.com/i/2hssEQ)
-
-# Demo 展示
-
-登录界面：
-[![2hrJS0.png](https://z3.ax1x.com/2021/06/11/2hrJS0.png)](https://imgtu.com/i/2hrJS0)
-
-注册界面：
-[![2hrtyT.png](https://z3.ax1x.com/2021/06/11/2hrtyT.png)](https://imgtu.com/i/2hrtyT)
-
-多人聊天界面：
-[![2hrySx.png](https://z3.ax1x.com/2021/06/11/2hrySx.png)](https://imgtu.com/i/2hrySx)
-
-私人聊天界面：
-[![2hsKc6.png](https://z3.ax1x.com/2021/06/11/2hsKc6.png)](https://imgtu.com/i/2hsKc6)
-
-[![2hslnO.png](https://z3.ax1x.com/2021/06/11/2hslnO.png)](https://imgtu.com/i/2hslnO)
-
-[![2hs1BD.png](https://z3.ax1x.com/2021/06/11/2hs1BD.png)](https://imgtu.com/i/2hs1BD)
+[![userInformation表.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/navicat_09-44-52.png)
 
 # 使用
-## 项目启动：
+## 本地测试：
 
 * **方法1：** 在命令行窗口 cd 进入项目根目录，输入 `node app.js` 后回车执行 app.js 文件
 
 * **方法2：** 在项目根目录下 ` Git Bash Here` ，输入 `node app.js` 后回车执行
+
+* 然后浏览器访问 `http://localhost:3000` 即可
+
+[![启动项目.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-47-10.png)
 
 ## 在线部署：
 
@@ -64,14 +50,44 @@
 
 1. 如有必要（例如源码不包含 `node_modules` 文件夹、`public/lib` 文件夹），需要在项目根目录下重新安装相应的 Node.js 库包、在 public/lib 目录下导入 jQuery 库包；
 
+# DEMO 展示
+
+## 登录 & 注册
+
+[![登录页面.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-55-01.png)
+
+[![登录成功.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-59-13.png)
+
+[![注册页面.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-56-51.png)
+
+[![注册成功.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_09-58-21.png)
+
+## 群聊
+
+[![群聊1.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-11.png.png)
+
+[![群聊2.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-01-24.png.png)
+
+[![群聊说明.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-05-13.png.png)
+
+## 私聊
+
+[![私聊1.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-08-49.png)
+
+[![私聊2.png](https://github.com/Ga1axyz/WebMessage/blob/main/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87/chrome_10-09-53.png)
+
 # 优化与改进
 ## 待实现
 
 * [ ] 修改密码功能
 
+* [ ] 用左侧用户栏提示相应未读消息取代目前使用公共聊天窗口提示的方案
+
+* [ ] 上传与下载文档功能
+
 ## 待改进
 
-* [ ] 用户密码加密传输与存储
+* [ ] 用户数据加密传输与存储
 
 * [ ] 防止 SQL 注入
 
